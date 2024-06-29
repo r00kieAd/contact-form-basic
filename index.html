@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-
-  Contact Us
-
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div id="main">
+    <div class="contactForm">
+      <div class="heading">
+        <h3>Contact Us</h3>
+      </div>
+      <div class="name-div">
+        <div class="first-name-div">
+          <label for="firstName">First Name <span class="star">*</span></label><br>
+          <input type="text" name="firstName" id="firstName">
+        </div>
+        <div class="last-name-div">
+          <label for="lastName">Last Name <span class="star">*</span></label><br>
+          <input type="text" name="lastName" id="lastName">
+        </div>
+      </div>
+      <div class="email-div">
+        <label for="email">Email <Address></Address> <span class="star">*</span></label><br>
+        <input type="text" name="email" id="email">
+      </div>
+      <div class="queryType">
+        <div class="general-q-div">
+          <label for="generalEnquiry">General Enquiry <span class="star">*</span></label><br>
+          <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
+        </div>
+        <div class="support-q-div">
+          <label for="supportRequest">Support Request <span class="star">*</span></label><br>
+          <input type="radio" name="supportRequest" id="supportRequest" value="support">
+        </div>
+      </div>
+      <div class="message-div">
+        <label for="message">Message <span class="star">*</span></label><br>
+        <textarea type="text" name="message" id="message" rows="4"></textarea>
+      </div>
+      <div class="consent-div">
+        <label for="consent">I consent to being contacted by the team <span class="star">*</span></label>
+        <input type="checkbox" name="consent" id="consent">
+      </div>
+      <div class="submit-div">
+        <button type="submit" id="submit">Submit</button>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>
