@@ -1,0 +1,93 @@
+#main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(25rem, 32vw, 50rem);
+  border: 1px solid black;
+}
+#main .contactForm {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+}
+#main .contactForm .heading h3 {
+  font-size: 24px;
+}
+#main .contactForm .form-x {
+  margin: 0.5rem 0;
+  font-size: 16px;
+}
+#main .contactForm .form-x label {
+  line-height: 25px;
+}
+#main .contactForm .form-x input {
+  outline: none;
+  padding: 7px 10px;
+  margin: 0;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 5px;
+  height: 20px;
+}
+#main .contactForm .form-x input:focus {
+  border-color: hsl(169, 82%, 27%);
+  background: hsl(148, 38%, 91%);
+}
+#main .contactForm .form-x input:hover {
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+#main .contactForm .name-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#main .contactForm .email-div input {
+  width: calc(100% - 1.4rem);
+}
+#main .contactForm .query-div .qry {
+  font-size: 15px;
+}
+#main .contactForm .query-div .queryType {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  height: 40px;
+}
+#main .contactForm .query-div .queryType .form-x {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: left;
+  border: 1px solid hsl(186, 15%, 59%);
+  padding: 8px;
+  border-radius: 5px;
+}
+#main .contactForm .query-div .queryType .form-x label {
+  line-height: 0;
+  margin-top: 0.1rem;
+}
+#main .contactForm .query-div .queryType .form-x input[type=radio] {
+  margin-right: 0.5rem;
+}
+#main .contactForm .query-div .queryType .form-x input[type=radio]:focus {
+  border-color: hsl(169, 82%, 27%);
+  background: hsl(148, 38%, 91%);
+}
+#main .contactForm .query-div .queryType .form-x:hover {
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+#main .contactForm .query-div .queryType .general-q-div {
+  margin-right: 0.5rem;
+}
+#main .contactForm .query-div .queryType .support-q-div {
+  margin-left: 0.5rem;
+}/*# sourceMappingURL=style.css.map */

@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Form</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,30 +16,33 @@
         <h3>Contact Us</h3>
       </div>
       <div class="name-div">
-        <div class="first-name-div">
+        <div class="first-name-div form-x">
           <label for="firstName">First Name <span class="star">*</span></label><br>
           <input type="text" name="firstName" id="firstName">
         </div>
-        <div class="last-name-div">
+        <div class="last-name-div form-x">
           <label for="lastName">Last Name <span class="star">*</span></label><br>
           <input type="text" name="lastName" id="lastName">
         </div>
       </div>
-      <div class="email-div">
-        <label for="email">Email <Address></Address> <span class="star">*</span></label><br>
+      <div class="email-div form-x">
+        <label for="email">Email Address <span class="star">*</span></label><br>
         <input type="text" name="email" id="email">
       </div>
-      <div class="queryType">
-        <div class="general-q-div">
-          <label for="generalEnquiry">General Enquiry <span class="star">*</span></label><br>
-          <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
-        </div>
-        <div class="support-q-div">
-          <label for="supportRequest">Support Request <span class="star">*</span></label><br>
-          <input type="radio" name="supportRequest" id="supportRequest" value="support">
+      <div class="query-div form-x">
+        <label for="query" class="qry">Query Type <span class="star">*</span></label>
+        <div class="queryType">
+          <div class="general-q-div form-x">
+            <label for="generalEnquiry">General Enquiry</label><br>
+              <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
+          </div>
+          <div class="support-q-div form-x">
+            <label for="supportRequest">Support Request</label><br>
+            <input type="radio" name="supportRequest" id="supportRequest" value="support">
+          </div>
         </div>
       </div>
-      <div class="message-div">
+      <div class="message-div form-x">
         <label for="message">Message <span class="star">*</span></label><br>
         <textarea type="text" name="message" id="message" rows="4"></textarea>
       </div>

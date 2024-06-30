@@ -1,0 +1,128 @@
+$lightGreen: hsl(148, 38%, 91%);
+$mediumGreen: hsl(169, 82%, 27%);
+$red: hsl(0, 66%, 54%);
+$white: hsl(0, 0%, 100%);
+$mediumGray: hsl(186, 15%, 59%);
+$darkGray: hsl(187, 24%, 22%);
+$mainWidth: clamp(25rem, 32vw, 50rem);
+
+
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $mainWidth;
+    border: 1px solid black;
+
+    .contactForm {
+        position: relative;
+        padding: .8rem 1.5rem;
+
+        .heading h3 {
+            font-size: 24px;
+        }
+
+        @mixin flex-display {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @mixin input-focus {
+            border-color: $mediumGreen;
+            background: $lightGreen;
+        }
+
+        @mixin input-hover {
+            border-color: $mediumGreen;
+            cursor: pointer;
+        }
+
+        .form-x {
+            margin: 0.5rem 0;
+            font-size: 16px;
+
+            label {
+                line-height: 25px;
+            }
+
+            input {
+                outline: none;
+                padding: 7px 10px;
+                margin: 0;
+                border: 1px solid $mediumGray;
+                border-radius: 5px;
+                height: 20px;
+            }
+
+            input:focus {
+                @include input-focus;
+            }
+
+            input:hover {
+                @include input-hover;
+            }
+        }
+
+        .name-div {
+            @include flex-display;
+        }
+
+        .email-div {
+            input {
+                width: calc(100% - 1.4rem);
+            }
+        }
+
+        .query-div {
+
+            .qry {
+                font-size: 15px;
+            }
+
+            .queryType {
+                @include flex-display;
+
+                margin: 0;
+                height: 40px;
+
+                .form-x {
+                    @include flex-display;
+                    flex-direction: row-reverse;
+                    justify-content: left;
+                    border: 1px solid $mediumGray;
+                    padding: 8px;
+                    border-radius: 5px;
+
+                    label {
+                        line-height: 0;
+                        margin-top: .1rem;
+                    }
+
+                    input[type="radio"] {
+                        margin-right: .5rem;
+                    }
+
+                    input[type="radio"]:focus {
+                        @include input-focus;
+                    }
+                }
+
+                .form-x:hover {
+                    @include input-hover;
+                }
+
+                .general-q-div {
+                    margin-right: .5rem;
+                }
+
+                .support-q-div {
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}
