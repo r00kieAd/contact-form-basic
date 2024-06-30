@@ -7,11 +7,15 @@
   <title>Contact Form</title>
   <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <div id="main">
-    <div class="contactForm">
+    <div class="contactForm karla-font">
       <div class="heading">
         <h3>Contact Us</h3>
       </div>
@@ -34,7 +38,7 @@
         <div class="queryType">
           <div class="general-q-div form-x">
             <label for="generalEnquiry">General Enquiry</label><br>
-              <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
+            <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
           </div>
           <div class="support-q-div form-x">
             <label for="supportRequest">Support Request</label><br>
@@ -46,7 +50,7 @@
         <label for="message">Message <span class="star">*</span></label><br>
         <textarea type="text" name="message" id="message" rows="4"></textarea>
       </div>
-      <div class="consent-div">
+      <div class="consent-div form-x">
         <label for="consent">I consent to being contacted by the team <span class="star">*</span></label>
         <input type="checkbox" name="consent" id="consent">
       </div>

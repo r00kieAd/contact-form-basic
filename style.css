@@ -1,10 +1,23 @@
+.karla-font {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: hsl(148, 38%, 91%);
+}
+
 #main {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: clamp(25rem, 32vw, 50rem);
-  border: 1px solid black;
+  border: 1px solid hsl(148, 38%, 91%);
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
 }
 #main .contactForm {
   position: relative;
@@ -14,8 +27,8 @@
   font-size: 24px;
 }
 #main .contactForm .form-x {
-  margin: 0.5rem 0;
-  font-size: 16px;
+  margin-bottom: 1rem;
+  font-size: 15px;
 }
 #main .contactForm .form-x label {
   line-height: 25px;
@@ -30,11 +43,18 @@
 }
 #main .contactForm .form-x input:focus {
   border-color: hsl(169, 82%, 27%);
-  background: hsl(148, 38%, 91%);
+  background-color: hsl(148, 38%, 91%);
 }
 #main .contactForm .form-x input:hover {
   border-color: hsl(169, 82%, 27%);
   cursor: pointer;
+}
+#main .contactForm .form-x .star {
+  position: absolute;
+  font-size: 12px;
+  color: hsl(169, 82%, 27%);
+  margin-left: 5px;
+  margin-top: -1px;
 }
 #main .contactForm .name-div {
   width: 100%;
@@ -55,7 +75,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin-top: 8px;
   height: 40px;
 }
 #main .contactForm .query-div .queryType .form-x {
@@ -79,7 +99,7 @@
 }
 #main .contactForm .query-div .queryType .form-x input[type=radio]:focus {
   border-color: hsl(169, 82%, 27%);
-  background: hsl(148, 38%, 91%);
+  background-color: hsl(148, 38%, 91%);
 }
 #main .contactForm .query-div .queryType .form-x:hover {
   border-color: hsl(169, 82%, 27%);
@@ -90,4 +110,53 @@
 }
 #main .contactForm .query-div .queryType .support-q-div {
   margin-left: 0.5rem;
+}
+#main .contactForm .message-div textarea {
+  outline: none;
+  padding: 7px 10px;
+  margin: 0;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 5px;
+  width: calc(100% - 1.4rem);
+  resize: none;
+}
+#main .contactForm .message-div textarea:focus {
+  border-color: hsl(169, 82%, 27%);
+  background-color: hsl(148, 38%, 91%);
+}
+#main .contactForm .message-div textarea:hover {
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+#main .contactForm .consent-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+#main .contactForm .consent-div input {
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+}
+#main .contactForm .consent-div input:checked {
+  border-color: hsl(169, 82%, 27%);
+  background-color: hsl(148, 38%, 91%);
+}
+#main .contactForm .submit-div {
+  margin: 1rem 0;
+}
+#main .contactForm .submit-div button {
+  width: 100%;
+  height: 38px;
+  border: 1px solid hsl(169, 82%, 27%);
+  border-radius: 5px;
+  background: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+#main .contactForm .submit-div button:hover {
+  filter: brightness(0.7);
 }/*# sourceMappingURL=style.css.map */

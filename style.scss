@@ -6,6 +6,16 @@ $mediumGray: hsl(186, 15%, 59%);
 $darkGray: hsl(187, 24%, 22%);
 $mainWidth: clamp(25rem, 32vw, 50rem);
 
+.karla-font {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background: $lightGreen;
+}
 
 #main {
     position: absolute;
@@ -13,7 +23,9 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
     left: 50%;
     transform: translate(-50%, -50%);
     width: $mainWidth;
-    border: 1px solid black;
+    border: 1px solid $lightGreen;
+    border-radius: 10px;
+    background-color: $white;
 
     .contactForm {
         position: relative;
@@ -33,7 +45,7 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
 
         @mixin input-focus {
             border-color: $mediumGreen;
-            background: $lightGreen;
+            background-color: $lightGreen;
         }
 
         @mixin input-hover {
@@ -42,8 +54,8 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
         }
 
         .form-x {
-            margin: 0.5rem 0;
-            font-size: 16px;
+            margin-bottom: 1rem;
+            font-size: 15px;
 
             label {
                 line-height: 25px;
@@ -64,6 +76,14 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
 
             input:hover {
                 @include input-hover;
+            }
+
+            .star {
+                position: absolute;
+                font-size: 12px;
+                color: $mediumGreen;
+                margin-left: 5px;
+                margin-top: -1px;
             }
         }
 
@@ -86,7 +106,7 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
             .queryType {
                 @include flex-display;
 
-                margin: 0;
+                margin-top: 8px;
                 height: 40px;
 
                 .form-x {
@@ -122,6 +142,59 @@ $mainWidth: clamp(25rem, 32vw, 50rem);
                 .support-q-div {
                     margin-left: .5rem;
                 }
+            }
+        }
+
+        .message-div {
+            textarea {
+                outline: none;
+                padding: 7px 10px;
+                margin: 0;
+                border: 1px solid $mediumGray;
+                border-radius: 5px;
+                width: calc(100% - 1.4rem);
+                resize: none;
+            }
+
+            textarea:focus {
+                @include input-focus;
+            }
+
+            textarea:hover {
+                @include input-hover;
+            }
+        }
+
+        .consent-div {
+            @include flex-display;
+            flex-direction: row-reverse;
+            justify-content: left;
+
+            input {
+                margin-right: 1rem;
+                margin-bottom: .3rem;
+            }
+
+            input:checked {
+                @include input-focus;
+            }
+        }
+
+        .submit-div {
+            margin: 1rem 0;
+
+            button {
+                width: 100%;
+                height: 38px;
+                border: 1px solid $mediumGreen;
+                border-radius: 5px;
+                background: $mediumGreen;
+                color: $white;
+                cursor: pointer;
+            }
+
+            button:hover {
+                filter: brightness(0.7);
             }
         }
     }
