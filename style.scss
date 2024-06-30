@@ -26,13 +26,22 @@ body {
     border: 1px solid $lightGreen;
     border-radius: 10px;
     background-color: $white;
+    transition: height .2s ease-in;
 
     .contactForm {
         position: relative;
         padding: .8rem 1.5rem;
 
+        .err {
+            font-size: 10px;
+            font-weight: 600;
+            color: $red;
+            display: none;
+        }
+
         .heading h3 {
-            font-size: 24px;
+            font-size: 1.5rem;
+            color: $darkGray;
         }
 
         @mixin flex-display {
@@ -56,6 +65,7 @@ body {
         .form-x {
             margin-bottom: 1rem;
             font-size: 15px;
+            color: $darkGray;
 
             label {
                 line-height: 25px;
@@ -68,6 +78,7 @@ body {
                 border: 1px solid $mediumGray;
                 border-radius: 5px;
                 height: 20px;
+                color: $darkGray;
             }
 
             input:focus {
@@ -120,14 +131,11 @@ body {
                     label {
                         line-height: 0;
                         margin-top: .1rem;
+                        cursor: pointer;
                     }
 
                     input[type="radio"] {
                         margin-right: .5rem;
-                    }
-
-                    input[type="radio"]:focus {
-                        @include input-focus;
                     }
                 }
 
@@ -165,18 +173,24 @@ body {
             }
         }
 
-        .consent-div {
-            @include flex-display;
-            flex-direction: row-reverse;
-            justify-content: left;
+        .consent-parent-div {
 
-            input {
-                margin-right: 1rem;
-                margin-bottom: .3rem;
+            .consent-div {
+                @include flex-display;
+                flex-direction: row-reverse;
+                justify-content: left;
+    
+                input {
+                    margin-right: 1rem;
+                }
+    
+                input:checked {
+                    @include input-focus;
+                }
             }
 
-            input:checked {
-                @include input-focus;
+            .err {
+                margin: 0;
             }
         }
 

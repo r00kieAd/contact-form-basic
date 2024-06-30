@@ -18,17 +18,26 @@ body {
   border: 1px solid hsl(148, 38%, 91%);
   border-radius: 10px;
   background-color: hsl(0, 0%, 100%);
+  transition: height 0.2s ease-in;
 }
 #main .contactForm {
   position: relative;
   padding: 0.8rem 1.5rem;
 }
+#main .contactForm .err {
+  font-size: 10px;
+  font-weight: 600;
+  color: hsl(0, 66%, 54%);
+  display: none;
+}
 #main .contactForm .heading h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: hsl(187, 24%, 22%);
 }
 #main .contactForm .form-x {
   margin-bottom: 1rem;
   font-size: 15px;
+  color: hsl(187, 24%, 22%);
 }
 #main .contactForm .form-x label {
   line-height: 25px;
@@ -40,6 +49,7 @@ body {
   border: 1px solid hsl(186, 15%, 59%);
   border-radius: 5px;
   height: 20px;
+  color: hsl(187, 24%, 22%);
 }
 #main .contactForm .form-x input:focus {
   border-color: hsl(169, 82%, 27%);
@@ -93,13 +103,10 @@ body {
 #main .contactForm .query-div .queryType .form-x label {
   line-height: 0;
   margin-top: 0.1rem;
+  cursor: pointer;
 }
 #main .contactForm .query-div .queryType .form-x input[type=radio] {
   margin-right: 0.5rem;
-}
-#main .contactForm .query-div .queryType .form-x input[type=radio]:focus {
-  border-color: hsl(169, 82%, 27%);
-  background-color: hsl(148, 38%, 91%);
 }
 #main .contactForm .query-div .queryType .form-x:hover {
   border-color: hsl(169, 82%, 27%);
@@ -128,7 +135,7 @@ body {
   border-color: hsl(169, 82%, 27%);
   cursor: pointer;
 }
-#main .contactForm .consent-div {
+#main .contactForm .consent-parent-div .consent-div {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -137,13 +144,15 @@ body {
   flex-direction: row-reverse;
   justify-content: left;
 }
-#main .contactForm .consent-div input {
+#main .contactForm .consent-parent-div .consent-div input {
   margin-right: 1rem;
-  margin-bottom: 0.3rem;
 }
-#main .contactForm .consent-div input:checked {
+#main .contactForm .consent-parent-div .consent-div input:checked {
   border-color: hsl(169, 82%, 27%);
   background-color: hsl(148, 38%, 91%);
+}
+#main .contactForm .consent-parent-div .err {
+  margin: 0;
 }
 #main .contactForm .submit-div {
   margin: 1rem 0;
