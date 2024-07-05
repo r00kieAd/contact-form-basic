@@ -111,8 +111,13 @@ $('.inp').blur(
 )
 
 $('#submit').click(function () {
+    if ($(this).text() == 'Refresh') location.reload(); 
     const valid = checkEmptyError();
-    if (valid && !form_has_errors) alert('valid');
+    if (valid && !form_has_errors) {
+        $('#success').show();
+        $('#success').animate({top: "10%"});
+        $(this).text('Refresh');
+    }
 });
 
 function checkEmptyError() {
