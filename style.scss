@@ -35,8 +35,9 @@ body {
         .err {
             font-size: 10px;
             font-weight: 600;
-            color: $red;
             display: none;
+            margin-bottom: .5rem;
+            color: $red;
         }
 
         .heading h3 {
@@ -63,7 +64,7 @@ body {
         }
 
         .form-x {
-            margin-bottom: 1rem;
+            margin: .5rem 0;
             font-size: 15px;
             color: $darkGray;
 

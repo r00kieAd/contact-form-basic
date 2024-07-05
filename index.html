@@ -19,48 +19,49 @@
       <div class="heading">
         <h3>Contact Us</h3>
       </div>
-      <div class="name-div">
-        <div class="first-name-div form-x">
-          <label for="firstName">First Name <span class="star">*</span></label><br>
-          <input type="text" name="firstName" id="firstName">
-          <span id="fnerror" class="err"></span>
+      <div class="name-parent">
+        <div class="name-div">
+          <div class="first-name-div form-x">
+            <label for="firstName">First Name <span class="star">*</span></label><br>
+            <input type="text" name="firstName" id="firstName" value="" class="inp" has-error = false>
+          </div>
+          <div class="last-name-div form-x">
+            <label for="lastName">Last Name <span class="star">*</span></label><br>
+            <input type="text" name="lastName" id="lastName" value="" class="inp" has-error = false>
+          </div>
         </div>
-        <div class="last-name-div form-x">
-          <label for="lastName">Last Name <span class="star">*</span></label><br>
-          <input type="text" name="lastName" id="lastName">
-          <span id="lnerror" class="err"></span>
-        </div>
+        <span class="err" id="nameerror"></span>
       </div>
       <div class="email-div form-x">
         <label for="email">Email Address <span class="star">*</span></label><br>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" value="" class="inp" has-error = false>
         <span id="emailerror" class="err"></span>
       </div>
       <div class="query-div form-x">
         <label for="query" class="qry">Query Type <span class="star">*</span></label>
         <div class="queryType">
-          <div class="general-q-div form-x">
+          <div class="general-q-div form-x inp">
             <label for="generalEnquiry">General Enquiry</label><br>
             <input type="radio" name="generalEnquiry" id="generalEnquiry" value="general">
           </div>
-          <div class="support-q-div form-x">
+          <div class="support-q-div form-x inp">
             <label for="supportRequest">Support Request</label><br>
             <input type="radio" name="supportRequest" id="supportRequest" value="support">
           </div>
         </div>
-        <span id="radioerror"></span>
+        <span id="radioerror" class="err"></span>
       </div>
       <div class="message-div form-x">
         <label for="message">Message <span class="star">*</span></label><br>
-        <textarea type="text" name="message" id="message" rows="4"></textarea>
-        <span id="messagerror" class="err"></span>
+        <textarea type="text" name="message" id="message" rows="4" value="" class="inp" has-error=false></textarea>
+        <span id="messagerror" class="err">show curr err</span>
       </div>
       <div class="consent-parent-div form-x">
         <div class="consent-div">
           <label for="consent">I consent to being contacted by the team <span class="star">*</span></label>
           <input type="checkbox" name="consent" id="consent">
         </div>
-        <span id="consenterror" class="err"></span>
+        <span id="consenterror" class="err">You are required to consent before submitting the form</span>
       </div>
       <div class="submit-div">
         <button type="submit" id="submit">Submit</button>
