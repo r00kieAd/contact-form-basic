@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div id="main">
+    <div id="sub-main" class="karla-font">
+      <div class="heading">
+        <p>Contact Us</p>
+      </div>
+      <div id="form">
+        <form action="" method="">
+          <div class="names">
+            <div class="first-name">
+              <label for="firstname">&nbsp;First Name <span class="required">*</span></label><br>
+              <input type="text" name="firstname" id="firstname" value="">
+            </div>
+            <div class="last-name">
+              <label for="lastname">&nbsp;Last Name <span class="required">*</span></label><br>
+              <input type="text" name="lastname" id="lastname" value="">
+            </div>
+          </div>
+          <div class="email-address">
+            <label for="email">&nbsp;Email <span class="required">*</span></label><br>
+            <input type="text" name="email" id="email" value="">
+          </div>
+          <div class="queries">
+            <label for="query">&nbsp;Query Type <span class="required">*</span></label>
+            <div class="query-types">
+              <div class="query-1 query-type">
+                <input type="radio" name="query1" id="query1" class="qry" value="General Enquiry" checked>
+                <label for="query1">General Enquiry</label>
+              </div>
+              <div class="query-2 query-type">
+                <input type="radio" name="query2" id="query2" class="qry" value="Support Request" checked>
+                <label for="query2">Support Request</label>
+              </div>
+            </div>
+          </div>
+          <div class="message-div">
+            <label for="message">&nbsp;Message <span class="required">*</span></label><br>
+            <textarea name="message" id="message" value=""></textarea>
+          </div>
+          <div class="consent">
+            <div class="consent-container">
+              <input type="checkbox" name="iConsent" id="iConsent" checked>
+              <div class="label-container">
+                <label for="iConsent">I consent to being contacted by the team <span class="required">*</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="submit-button">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="javascripts/script.js"></script>
+</body>
+
+</html>

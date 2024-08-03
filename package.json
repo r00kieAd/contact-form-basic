@@ -1,0 +1,28 @@
+{
+  "name": "contact-form-basic",
+  "version": "1.0.0",
+  "description": "A basic web app to send mails",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r00kieAd/contact-form-basic.git"
+  },
+  "keywords": [
+    "contact",
+    "form"
+  ],
+  "author": "Adhyatma Dwivedi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r00kieAd/contact-form-basic/issues"
+  },
+  "homepage": "https://github.com/r00kieAd/contact-form-basic#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  }
+}
