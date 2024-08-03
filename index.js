@@ -5,7 +5,7 @@ import path, { dirname } from 'path';
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 4000;
+const port = 3000;
 // setting up middlewares
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
