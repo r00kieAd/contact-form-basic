@@ -1,0 +1,149 @@
+body {
+  background-color: hsl(148, 38%, 91%);
+  margin: 0;
+  padding: 0;
+}
+
+.karla-font {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#main {
+  position: relative;
+  width: auto;
+  margin: 1rem;
+}
+#main #sub-main {
+  background-color: white;
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+#main #sub-main .heading {
+  padding: 0 10px;
+}
+#main #sub-main .heading p {
+  font-size: 25px;
+  font-weight: 600;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  color: hsl(187, 24%, 22%);
+}
+#main #sub-main #form {
+  width: 100%;
+  padding: 10px;
+}
+#main #sub-main #form form label {
+  font-size: 15px;
+  font-weight: 400;
+  color: hsl(187, 24%, 22%);
+}
+#main #sub-main #form form input {
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 10px;
+  width: calc(100% - 30px);
+  font-size: 14px;
+  padding: 2px 5px;
+  height: 40px;
+  outline: none;
+  margin-top: 3px;
+}
+#main #sub-main #form form input:hover {
+  cursor: pointer;
+  border-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .required {
+  color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .names {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  row-gap: 10px;
+}
+#main #sub-main #form form .email-address {
+  margin: 10px 0;
+}
+#main #sub-main #form form .query-types {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  row-gap: 10px;
+  margin-top: 3px;
+}
+#main #sub-main #form form .query-types .query-type {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 10px;
+  width: calc(100% - 30px);
+  padding: 5px;
+}
+#main #sub-main #form form .query-types .query-type input {
+  width: 16px;
+  accent-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .query-types .query-type label {
+  margin-top: 6px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+#main #sub-main #form form .query-types .query-type:hover {
+  cursor: pointer;
+  border-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .message-div {
+  margin: 10px 0;
+}
+#main #sub-main #form form .message-div textarea {
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 10px;
+  width: calc(100% - 30px);
+  font-size: 14px;
+  padding: 2px 5px;
+  height: 40px;
+  outline: none;
+  margin-top: 3px;
+  height: 80px;
+  padding: 8px 5px;
+  resize: none;
+}
+#main #sub-main #form form .message-div textarea:hover {
+  cursor: pointer;
+  border-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .consent {
+  margin: 10px 0;
+}
+#main #sub-main #form form .consent .consent-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+#main #sub-main #form form .consent .consent-container input {
+  width: 16px;
+  accent-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .consent .consent-container .label-container {
+  width: 80%;
+  margin-left: 10px;
+}
+#main #sub-main #form form .consent .consent-container .label-container label {
+  line-break: strict;
+  word-spacing: 1px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+#main #sub-main #form form .submit-button {
+  position: relative;
+}
+#main #sub-main #form form .submit-button input {
+  height: 40px;
+  min-width: calc(100% - 20px);
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(148, 38%, 91%);
+}/*# sourceMappingURL=style.css.map */

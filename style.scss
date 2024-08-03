@@ -1,0 +1,194 @@
+$lightGreen: hsl(148, 38%, 91%);
+$mediumGreen: hsl(169, 82%, 27%);
+$red: hsl(0, 66%, 54%);
+$mediumGray: hsl(186, 15%, 59%);
+$darkGray: hsl(187, 24%, 22%);
+
+body {
+    background-color: $lightGreen;
+    margin: 0;
+    padding: 0;
+}
+
+.karla-font {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#main {
+
+    position: relative;
+    width: auto;
+    margin: 1rem;
+
+    #sub-main {
+        background-color: white;
+        position: relative;
+        padding: .5rem;
+        border-radius: 10px;
+
+        .heading {
+            padding: 0 10px;
+
+            p {
+                font-size: 25px;
+                font-weight: 600;
+                word-spacing: 1px;
+                letter-spacing: 1px;
+                color: $darkGray;
+            }
+        }
+
+        #form {
+
+            @mixin labelStyle {
+                font-size: 15px;
+                font-weight: 400;
+                color: $darkGray;
+            }
+
+            width: 100%;
+            padding: 10px;
+
+            @mixin inputStyle {
+                border: 1px solid $mediumGray;
+                border-radius: 10px;
+                width: calc(100% - 30px);
+                font-size: 14px;
+                padding: 2px 5px;
+                height: 40px;
+                outline: none;
+                margin-top: 3px;
+            }
+
+            @mixin hoverState {
+                cursor: pointer;
+                border-color: $mediumGreen;
+            }
+
+            @mixin gridDisplay {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto;
+                row-gap: 10px
+            }
+
+
+            form {
+
+                label {
+                    @include labelStyle;
+                }
+
+                input {
+                    @include inputStyle;
+                }
+
+                input:hover {
+                    @include hoverState;
+                }
+
+                .required {
+                    color: $mediumGreen;
+                }
+
+                .names {
+                    @include gridDisplay;
+                }
+
+                .email-address {
+                    margin: 10px 0;
+                }
+
+                .query-types {
+                    @include gridDisplay;
+                    margin-top: 3px;
+
+                    .query-type {
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        border: 1px solid $mediumGray;
+                        border-radius: 10px;
+                        width: calc(100% - 30px);
+                        padding: 5px;
+
+                        input {
+                            width: 16px;
+                            accent-color: $mediumGreen;
+                        }
+
+                        label {
+                            margin-top: 6px;
+                            margin-left: 10px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .query-type:hover {
+                        @include hoverState;
+                    }
+                }
+
+                .message-div {
+
+                    margin: 10px 0;
+
+                    textarea {
+                        @include inputStyle;
+                        height: 80px;
+                        padding: 8px 5px;
+                        resize: none;
+                    }
+
+                    textarea:hover {
+                        @include hoverState;
+                    }
+                }
+
+                .consent {
+                    margin: 10px 0;
+
+                    .consent-container {
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+
+                        input {
+                            width: 16px;
+                            accent-color: $mediumGreen;
+                        }
+
+                        .label-container {
+                            width: 80%;
+                            margin-left: 10px;
+
+                            label {
+                                line-break: strict;
+                                word-spacing: 1px;
+                                text-align: left;
+                                margin: 0;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+
+                .submit-button {
+                    position: relative;
+
+                    input {
+                        height: 40px;
+                        min-width: calc(100% - 20px);
+                        background-color: $lightGreen;
+                        border-color: $lightGreen;
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}
