@@ -24,11 +24,11 @@ $('#iConsent').change(function () {
     $('.submit-button input').toggleClass('submit-form');
 });
 
-$('.submit-form').click(() => {
-    if (checkForm) {
-        alert("success");
-    }
-    return
+$('.submit-form').on('submit', '.submit-form', (event) => {
+    // not working
+    console.log('Form submitted', event);
+    event.preventDefault();
+    return false;
 });
 
 function checkForm() {
@@ -43,4 +43,5 @@ function checkForm() {
     } else {
         alert('empty');
     }
+    return false;
 }

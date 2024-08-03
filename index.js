@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 // setting up middlewares
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 // a custom middleware to log request and responses
@@ -21,6 +21,11 @@ app.get('/index.html', (req, res) => {
     res.status(200);
     res.sendFile(__dirname + "/public/index.html");
 });
+
+app.post('/success.html', (req, res) => {
+    res.status(404);
+    res.send('<h1>Error 404</h1>')
+})
 
 app.listen(port, () => {
     console.log(`This server is running on port ${port}. Link: 'http://localhost:${port}/index.html'`);
