@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Form</title>
+  <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet/style.css">
 </head>
+
 <body>
   <div id="main">
-    <div id="sub-main">
+    <div id="sub-main" class="karla-font">
       <div class="heading">
         <p>Contact Us</p>
       </div>
@@ -19,7 +27,7 @@
               <input type="text" name="firstname" id="firstname" value="">
             </div>
             <div class="last-name">
-              <label for="lastname">First Name <span class="required">*</span></label><br>
+              <label for="lastname">Last Name <span class="required">*</span></label><br>
               <input type="text" name="lastname" id="lastname" value="">
             </div>
           </div>
@@ -46,8 +54,10 @@
           </div>
           <div class="consent">
             <div class="consent-container">
-              <input type="checkbox" name="iConsent" id="iConsent" checked>
-              <label for="iConsent">&nbsp;I consent to being contacted by the team <span class="required">*</span></label>
+              <input type="checkbox" name="iConsent" id="iConsent">
+              <div class="label-container">
+                <label for="iConsent">I consent to being contacted by the team <span class="required">*</span></label>
+              </div>
             </div>
           </div>
           <div class="submit-button">
@@ -58,4 +68,5 @@
     </div>
   </div>
 </body>
+
 </html>
