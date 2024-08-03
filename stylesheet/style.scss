@@ -22,6 +22,14 @@ body {
     width: auto;
     margin: 1rem;
 
+    @media screen and (min-width: 700px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35rem;
+    }
+
     #sub-main {
         background-color: white;
         position: relative;
@@ -71,7 +79,12 @@ body {
                 display: grid;
                 grid-template-columns: auto;
                 grid-template-rows: auto auto;
-                row-gap: 10px
+                row-gap: 16px;
+
+                @media screen and (min-width: 700px) {
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto;
+                }
             }
 
 
@@ -98,7 +111,7 @@ body {
                 }
 
                 .email-address {
-                    margin: 10px 0;
+                    margin: 16px 0;
                 }
 
                 .query-types {
@@ -120,20 +133,27 @@ body {
                         }
 
                         label {
-                            margin-top: 6px;
+                            margin-top: 3px;
                             margin-left: 10px;
                             font-size: 16px;
+                            cursor: pointer;
                         }
                     }
 
                     .query-type:hover {
                         @include hoverState;
                     }
+
+                    .highlight {
+                        border-color: $mediumGreen;
+                        background-color: $lightGreen;
+                        transition: all 0.2s ease-in-out;
+                    }
                 }
 
                 .message-div {
 
-                    margin: 10px 0;
+                    margin: 16px 0;
 
                     textarea {
                         @include inputStyle;
@@ -183,6 +203,15 @@ body {
                         min-width: calc(100% - 20px);
                         background-color: $lightGreen;
                         border-color: $lightGreen;
+                        color: white;
+                        cursor: not-allowed;
+                        transition: all .2s ease-in;
+                    }
+
+                    .submit-form {
+                        background-color: $mediumGreen;
+                        border-color: $mediumGreen;
+                        cursor: pointer;
                     }
                 }
 

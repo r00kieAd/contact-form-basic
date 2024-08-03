@@ -15,6 +15,15 @@ body {
   width: auto;
   margin: 1rem;
 }
+@media screen and (min-width: 700px) {
+  #main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35rem;
+  }
+}
 #main #sub-main {
   background-color: white;
   position: relative;
@@ -61,17 +70,29 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
-  row-gap: 10px;
+  row-gap: 16px;
+}
+@media screen and (min-width: 700px) {
+  #main #sub-main #form form .names {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
 }
 #main #sub-main #form form .email-address {
-  margin: 10px 0;
+  margin: 16px 0;
 }
 #main #sub-main #form form .query-types {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
-  row-gap: 10px;
+  row-gap: 16px;
   margin-top: 3px;
+}
+@media screen and (min-width: 700px) {
+  #main #sub-main #form form .query-types {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
 }
 #main #sub-main #form form .query-types .query-type {
   display: flex;
@@ -87,16 +108,22 @@ body {
   accent-color: hsl(169, 82%, 27%);
 }
 #main #sub-main #form form .query-types .query-type label {
-  margin-top: 6px;
+  margin-top: 3px;
   margin-left: 10px;
   font-size: 16px;
+  cursor: pointer;
 }
 #main #sub-main #form form .query-types .query-type:hover {
   cursor: pointer;
   border-color: hsl(169, 82%, 27%);
 }
+#main #sub-main #form form .query-types .highlight {
+  border-color: hsl(169, 82%, 27%);
+  background-color: hsl(148, 38%, 91%);
+  transition: all 0.2s ease-in-out;
+}
 #main #sub-main #form form .message-div {
-  margin: 10px 0;
+  margin: 16px 0;
 }
 #main #sub-main #form form .message-div textarea {
   border: 1px solid hsl(186, 15%, 59%);
@@ -146,4 +173,12 @@ body {
   min-width: calc(100% - 20px);
   background-color: hsl(148, 38%, 91%);
   border-color: hsl(148, 38%, 91%);
+  color: white;
+  cursor: not-allowed;
+  transition: all 0.2s ease-in;
+}
+#main #sub-main #form form .submit-button .submit-form {
+  background-color: hsl(169, 82%, 27%);
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

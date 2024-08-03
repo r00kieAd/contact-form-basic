@@ -20,41 +20,41 @@
         <p>Contact Us</p>
       </div>
       <div id="form">
-        <form action="/" method="post">
+        <form action="" method="">
           <div class="names">
             <div class="first-name">
-              <label for="firstname">First Name <span class="required">*</span></label><br>
+              <label for="firstname">&nbsp;First Name <span class="required">*</span></label><br>
               <input type="text" name="firstname" id="firstname" value="">
             </div>
             <div class="last-name">
-              <label for="lastname">Last Name <span class="required">*</span></label><br>
+              <label for="lastname">&nbsp;Last Name <span class="required">*</span></label><br>
               <input type="text" name="lastname" id="lastname" value="">
             </div>
           </div>
           <div class="email-address">
-            <label for="email">Email <span class="required">*</span></label><br>
+            <label for="email">&nbsp;Email <span class="required">*</span></label><br>
             <input type="text" name="email" id="email" value="">
           </div>
           <div class="queries">
-            <label for="query">Query Type <span class="required">*</span></label>
+            <label for="query">&nbsp;Query Type <span class="required">*</span></label>
             <div class="query-types">
               <div class="query-1 query-type">
-                <input type="radio" name="query1" id="query1" value="General Enquiry" checked>
+                <input type="radio" name="query1" id="query1" class="qry" value="General Enquiry" checked>
                 <label for="query1">General Enquiry</label>
               </div>
               <div class="query-2 query-type">
-                <input type="radio" name="query2" id="query2" value="Support Request">
+                <input type="radio" name="query2" id="query2" class="qry" value="Support Request" checked>
                 <label for="query2">Support Request</label>
               </div>
             </div>
           </div>
           <div class="message-div">
-            <label for="message">Message <span class="required">*</span></label><br>
+            <label for="message">&nbsp;Message <span class="required">*</span></label><br>
             <textarea name="message" id="message" value=""></textarea>
           </div>
           <div class="consent">
             <div class="consent-container">
-              <input type="checkbox" name="iConsent" id="iConsent">
+              <input type="checkbox" name="iConsent" id="iConsent" checked>
               <div class="label-container">
                 <label for="iConsent">I consent to being contacted by the team <span class="required">*</span></label>
               </div>
@@ -67,6 +67,8 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script/script.js"></script>
 </body>
 
 </html>
