@@ -1,4 +1,5 @@
 let query = "";
+let submit = false;
 $(document).ready(() => {
     $('#iConsent').removeAttr('checked');
     $('.qry').removeAttr('checked');
@@ -22,12 +23,14 @@ $('.query-type').click(function () {
 
 $('#iConsent').change(function () {
     $('.submit-button input').toggleClass('submit-form');
+    if (!submit) {submit = true; return;}
+    if (submit) {submit = false; return;}
 });
 
-$('.submit-form').on('submit', '.submit-form', (event) => {
-    // not working
-    console.log('Form submitted', event);
+$('#formMain').submit((event) => {
     event.preventDefault();
+    if (!submit) return;
+    checkForm();
     return false;
 });
 
