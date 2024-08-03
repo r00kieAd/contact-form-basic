@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./design/desktop-design.jpg" alt="Contact Form Basic" />
+  <img src="./public/design/desktop-design.jpg" alt="Contact Form Basic" />
 
   &#xa0;
 
