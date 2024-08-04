@@ -224,7 +224,7 @@ body {
                         cursor: pointer;
                     }
                 }
-                
+
                 .err {
                     font-size: 10px;
                     color: $red;
@@ -236,7 +236,12 @@ body {
                 }
 
             }
-
         }
     }
+}
+
+.serverResponse {
+    font-size: 12px;
+    color: $red;
+    margin-left: 10px;
 }
