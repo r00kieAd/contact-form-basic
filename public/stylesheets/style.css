@@ -79,7 +79,8 @@ body {
   }
 }
 #main #sub-main #form form .email-address {
-  margin: 16px 0;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 #main #sub-main #form form .query-types {
   display: grid;
@@ -122,8 +123,11 @@ body {
   background-color: hsl(148, 38%, 91%);
   transition: all 0.2s ease-in-out;
 }
+#main #sub-main #form form .query-types .errinpt {
+  border-color: hsl(0, 66%, 54%);
+}
 #main #sub-main #form form .message-div {
-  margin: 16px 0;
+  margin-top: 16px;
 }
 #main #sub-main #form form .message-div textarea {
   border: 1px solid hsl(186, 15%, 59%);
@@ -141,6 +145,9 @@ body {
 #main #sub-main #form form .message-div textarea:hover {
   cursor: pointer;
   border-color: hsl(169, 82%, 27%);
+}
+#main #sub-main #form form .message-div .errinpt {
+  border-color: hsl(0, 66%, 54%);
 }
 #main #sub-main #form form .consent {
   margin: 10px 0;
@@ -181,4 +188,12 @@ body {
   background-color: hsl(169, 82%, 27%);
   border-color: hsl(169, 82%, 27%);
   cursor: pointer;
+}
+#main #sub-main #form form .err {
+  font-size: 10px;
+  color: hsl(0, 66%, 54%);
+  margin-left: 10px;
+}
+#main #sub-main #form form .errinpt {
+  border-color: hsl(0, 66%, 54%);
 }/*# sourceMappingURL=style.css.map */

@@ -111,7 +111,8 @@ body {
                 }
 
                 .email-address {
-                    margin: 16px 0;
+                    margin-top: 10px;
+                    margin-bottom: 15px;
                 }
 
                 .query-types {
@@ -149,11 +150,15 @@ body {
                         background-color: $lightGreen;
                         transition: all 0.2s ease-in-out;
                     }
+
+                    .errinpt {
+                        border-color: $red;
+                    }
                 }
 
                 .message-div {
 
-                    margin: 16px 0;
+                    margin-top: 16px;
 
                     textarea {
                         @include inputStyle;
@@ -164,6 +169,10 @@ body {
 
                     textarea:hover {
                         @include hoverState;
+                    }
+
+                    .errinpt {
+                        border-color: $red;
                     }
                 }
 
@@ -192,6 +201,7 @@ body {
                                 padding: 0;
                             }
                         }
+                        
                     }
                 }
 
@@ -214,7 +224,16 @@ body {
                         cursor: pointer;
                     }
                 }
+                
+                .err {
+                    font-size: 10px;
+                    color: $red;
+                    margin-left: 10px;
+                }
 
+                .errinpt {
+                    border-color: $red;
+                }
 
             }
 
