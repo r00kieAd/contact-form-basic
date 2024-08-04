@@ -6,7 +6,7 @@ $(document).ready(() => {
     $('.qry').removeAttr('checked');
 });
 
-$('.inpt').focus(() => {
+$('.inpt').click(() => {
     $('.inpt').removeClass('errinpt');
     $('.err').hide();
     valid = true;
