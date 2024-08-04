@@ -18,7 +18,7 @@
   <img alt="License" src="https://img.shields.io/github/license/r00kieAd/contact-form-basic?color=56BEB8">
 </p>
 
-Status
+<h1 align="center">Status</h1>
 
 <h4 align="center"> 
 	🚧  Contact Form Basic 🚀 Under construction...  🚧
