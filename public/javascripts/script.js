@@ -64,24 +64,22 @@ async function submitForm(form_data) {
             firstName: form_data[0], lastName: form_data[1],
             email: form_data[2], queryType: form_data[3],
             message: form_data[4]
-        })
-
-        // success: function (result) {
-        //     if (result.redirectUrl) {
-        //         window.location.href = result.redirectUrl;
-        //     }
-        // },
-        // error: function(xhr) {
-        //     if (xhr.status !=  200) {
-        //         $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
-        //     } else {
-        //         alert(`unknown error: ${xhr.status}`);
-        //     }
-        // }
+        }),
+        success: function (result) {
+            if (result.redirectUrl) {
+                window.location.href = result.redirectUrl;
+            }
+        },
+        error: function(xhr) {
+            if (xhr.status !=  200) {
+                $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
+            } else {
+                alert(`unknown error: ${xhr.status}`);
+            }
+        }
     });
-    if (result.redirectUrl) {
-        window.location.href = result.redirectUrl;
-    }
+
+    // LDK856DB9DJJVWTK3P1KMSPN
 }
 
     function getValues() {
