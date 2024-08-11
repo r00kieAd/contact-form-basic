@@ -6,7 +6,7 @@
   <!-- <a href="https://contactformbasic.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Contact Form Basic</h1>
+<h1 align="center">Basic Contact Form</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/r00kieAd/contact-form-basic?color=56BEB8">
@@ -21,7 +21,7 @@
 <h1 align="center">Status</h1>
 
 <h4 align="center"> 
-	🚧  Contact Form Basic 🚀 Under construction...  🚧
+	🚧  Basic Contact Form 🚀 Under construction...  🚧
 </h4> 
 
 <hr>
@@ -40,13 +40,13 @@
 
 ## :dart: About ##
 
-A basic contact form with response of your input sent to your mail id. App still in progress.
+A basic contact form with response of your input sent to your mail id. First a basic form will be used to get the input data then upon validation will be sent to server to send the mail. Both frontend and backed is coded by me although the frontend design was provided by frontend mentor. It has been modified and coded to accumulate the fullstack environment. Website is still in progress.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Responsive Design;
+:heavy_check_mark: Form Validation;
+:heavy_check_mark: Email Sending;
 
 ## :rocket: Technologies ##
 
@@ -64,7 +64,7 @@ The following tools were used in this project:
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
 
-Made with :apple: by <a href="https://github.com/r00kieAd" target="_blank">Adhyatma Dwivedi</a>
+Made with :keyboard: by <a href="https://github.com/r00kieAd" target="_blank">Adhyatma Dwivedi</a>
 
 &#xa0;
 

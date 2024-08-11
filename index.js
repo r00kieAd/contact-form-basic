@@ -29,13 +29,13 @@ app.post('/success.html', async (req, res) => {
       return;
     }
     try {
-      const mail_sent = await sendEmail(obj.email, obj.message);
+      const mail_sent = await sendEmail(obj);
       console.log('mail status', mail_sent);
       // if the mail send is succes, this will run else will go to catch block
       res.status(200).json({ redirectUrl: '/success.html' });
     } catch (emailError) {
       console.error('Email sending error:', emailError);
-      res.status(500).json({ error: 'Failed to send email.' });
+      res.status(401).json({ error: 'Failed to send email.' });
     }
   } catch (err) {
     console.log(state);
@@ -77,7 +77,7 @@ async function updateJson(obj) {
   }
 }
 
-async function sendEmail(toMailId, content) {
+async function sendEmail(obj) {
 
   // var transporter = nodemailer.createTransport({
   //   service: 'gmail',
@@ -86,6 +86,9 @@ async function sendEmail(toMailId, content) {
   //     pass: '********************'
   //   }
   // });
+
+  const toMailId = obj.email;
+  const content = `Hi ${obj.firstName},\nYour ${obj.queryType} has been noted.\nMessage: ${obj.message}`;
 
   var transporter = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",

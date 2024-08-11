@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "asda@asd.asd",
+    "queryType": "General Enquiry",
+    "message": "Test Mail"
+  },
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "Support Request",
+    "message": "asd"
+  },
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "General Enquiry",
+    "message": "Test"
+  },
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "General Enquiry",
+    "message": "asd"
+  },
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "General Enquiry",
+    "message": "asd"
+  },
+  {
+    "firstName": "Spongebob",
+    "lastName": "Squarepants",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "Support Request",
+    "message": "This is a mail trap email test."
+  },
+  {
+    "firstName": "Spongebob",
+    "lastName": "Squarepants",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "Support Request",
+    "message": "This is a mail trap email test."
+  },
+  {
+    "firstName": "Adhyatma",
+    "lastName": "Dwievdi",
+    "email": "adhyatmadwivedi200@gmail.com",
+    "queryType": "General Enquiry",
+    "message": "This is a mail trap email test."
+  }
+]
