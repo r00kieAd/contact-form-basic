@@ -82,7 +82,6 @@ async function submitForm(form_data) {
         }
     });
 
-    // LDK856DB9DJJVWTK3P1KMSPN
 }
 
     function getValues() {
