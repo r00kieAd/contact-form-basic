@@ -74,8 +74,12 @@ async function submitForm(form_data) {
         },
         error: function(xhr) {
             if (xhr.status !=  200) {
-                const response = JSON.parse(xhr.responseText);
-                $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${response.error}</p>`);
+                try {
+                    const response = JSON.parse(xhr.responseText);
+                    $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${response.error}</p>`);
+                } catch (err) {
+                    $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
+                }
             } else {
                 alert(`unknown error: ${xhr.status}`);
             }
