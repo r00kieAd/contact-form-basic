@@ -198,6 +198,29 @@ body {
   border-color: hsl(0, 66%, 54%);
 }
 
+#details {
+  background-color: hsl(169, 82%, 27%);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+#details .success {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+#details .success img {
+  margin-right: 10px;
+}
+#details .success p {
+  font-weight: 600;
+  font-size: 16px;
+}
+#details .content {
+  font-size: 14px;
+}
+
 .serverResponse {
   font-size: 12px;
   color: hsl(0, 66%, 54%);
