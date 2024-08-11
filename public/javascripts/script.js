@@ -56,7 +56,8 @@ $('#formMain').submit((event) => {
 });
 
 async function submitForm(form_data) {
-    let result = await $.ajax({
+    $('.submit-form').val('Please wait...');
+    await $.ajax({
         url: "/success.html",
         type: "POST",
         contentType: "application/json",
@@ -69,6 +70,7 @@ async function submitForm(form_data) {
             if (result.redirectUrl) {
                 window.location.href = result.redirectUrl;
             }
+            $('.submit-form').val('Submit');
         },
         error: function(xhr) {
             if (xhr.status !=  200) {
@@ -76,6 +78,7 @@ async function submitForm(form_data) {
             } else {
                 alert(`unknown error: ${xhr.status}`);
             }
+            $('.submit-form').val('Submit');
         }
     });
 

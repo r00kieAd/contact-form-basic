@@ -1,7 +1,7 @@
 // app and dependecies initializations
 import express from "express";
 import bodyParser from "body-parser";
-import path, { dirname } from 'path';
+import path, { dirname, resolve } from 'path';
 import { fileURLToPath } from "url";
 import { promises as fs } from 'fs';
 import nodemailer from 'nodemailer';
@@ -29,8 +29,9 @@ app.post('/success.html', async (req, res) => {
       return;
     }
     try {
-      await sendEmail(obj.email, obj.message);
-      console.log(state);
+      const mail_sent = await sendEmail(obj.email, obj.message);
+      console.log('mail status', mail_sent);
+      // if the mail send is succes, this will run else will go to catch block
       res.status(200).json({ redirectUrl: '/success.html' });
     } catch (emailError) {
       console.error('Email sending error:', emailError);
@@ -76,43 +77,34 @@ async function updateJson(obj) {
   }
 }
 
-async function sendEmail(to, content) {
+async function sendEmail(toMailId, content) {
 
   var transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
-      user: "usermail",
-      pass: "password"
+      user: 'adhyatma.d01@gmail.com',
+      pass: 'vovvI1-fyxrac-kuzgim'
     }
   });
 
-
-  // Configure the mailoptions object
-  const mailOptions = {
+  var mailOptions = {
     from: 'adhyatma.d01@gmail.com',
-    to: to,
+    to: toMailId,
     subject: 'Sending Email using Node.js',
     text: content
   };
 
-  console.log(mailOptions);
-
-  const SENDMAIL = async (mailDetails, callback) => {
-    try {
-      const info = await transporter.sendMail(mailDetails)
-      callback(info);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  SENDMAIL(mailOptions, (info) => {
-    console.log("Email sent successfully");
-    console.log("MESSAGE ID: ", info.messageId);
-  });
-
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+        resolve(info);
+      }
+    });
+  })
 }
 
 function customLogger(req, res, next) {
