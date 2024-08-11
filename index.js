@@ -79,11 +79,20 @@ async function updateJson(obj) {
 
 async function sendEmail(toMailId, content) {
 
+  // var transporter = nodemailer.createTransport({
+  //   service: 'gmail',
+  //   auth: {
+  //     user: 'adhyatma.d01@gmail.com',
+  //     pass: '********************'
+  //   }
+  // });
+
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: "sandbox.smtp.mailtrap.io",
+    port: 2525,
     auth: {
-      user: 'adhyatma.d01@gmail.com',
-      pass: 'vovvI1-fyxrac-kuzgim'
+      user: "9b02889ae3d3e8",
+      pass: "c68a462419f246"
     }
   });
 
