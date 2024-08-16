@@ -41,6 +41,12 @@ $('#iConsent').change(function () {
     }
 });
 
+function iDontConsent() {
+    submit = false;
+    $('#iConsent').prop('checked', false);
+    $('.submit-button input').toggleClass('submit-form');
+}
+
 $('#formMain').submit((event) => {
     event.preventDefault();
     if (!submit) return;
@@ -49,15 +55,17 @@ $('#formMain').submit((event) => {
     if (valid) {
         submitForm(form_data);
     } else {
-        submit = false;
-        $('#iConsent').prop('checked', false);
-        $('.submit-button input').toggleClass('submit-form');
+        iDontConsent();
     }
 });
 
 async function submitForm(form_data) {
     $('.submit-form').val('Please wait...');
     $('#loaderDiv').show();
+    function hideLoader() {
+        $('.submit-form').val('Submit');
+        $('#loaderDiv').hide();
+    }
     await $.ajax({
         url: "/success.html",
         type: "POST",
@@ -71,8 +79,7 @@ async function submitForm(form_data) {
             if (result.redirectUrl) {
                 window.location.href = result.redirectUrl;
             }
-            $('.submit-form').val('Submit');
-            $('#loaderDiv').hide();
+            hideLoader();
         },
         error: function (xhr) {
             if (xhr.status != 200) {
@@ -85,11 +92,8 @@ async function submitForm(form_data) {
             } else {
                 alert(`unknown error: ${xhr.status}`);
             }
-            $('.submit-form').val('Submit');
-            submit = false;
-            $('#iConsent').prop('checked', false);
-            $('.submit-button input').toggleClass('submit-form');
-            $('#loaderDiv').hide();
+            iDontConsent();
+            hideLoader();
         }
     });
 
