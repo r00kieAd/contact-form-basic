@@ -57,6 +57,7 @@ $('#formMain').submit((event) => {
 
 async function submitForm(form_data) {
     $('.submit-form').val('Please wait...');
+    $('#loaderDiv').show();
     await $.ajax({
         url: "/success.html",
         type: "POST",
@@ -71,9 +72,10 @@ async function submitForm(form_data) {
                 window.location.href = result.redirectUrl;
             }
             $('.submit-form').val('Submit');
+            $('#loaderDiv').hide();
         },
-        error: function(xhr) {
-            if (xhr.status !=  200) {
+        error: function (xhr) {
+            if (xhr.status != 200) {
                 try {
                     const response = JSON.parse(xhr.responseText);
                     $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${response.error}</p>`);
@@ -84,67 +86,71 @@ async function submitForm(form_data) {
                 alert(`unknown error: ${xhr.status}`);
             }
             $('.submit-form').val('Submit');
+            submit = false;
+            $('#iConsent').prop('checked', false);
+            $('.submit-button input').toggleClass('submit-form');
+            $('#loaderDiv').hide();
         }
     });
 
 }
 
-    function getValues() {
-        const firstName = $('#firstname').val();
-        const lastName = $('#lastname').val();
-        const email = $('#email').val();
-        const queryType = query;
-        const message = $('#message').val();
-        return [firstName, lastName, email, queryType, message];
-    }
+function getValues() {
+    const firstName = $('#firstname').val();
+    const lastName = $('#lastname').val();
+    const email = $('#email').val();
+    const queryType = query;
+    const message = $('#message').val();
+    return [firstName, lastName, email, queryType, message];
+}
 
-    function checkForm(vars) {
+function checkForm(vars) {
 
-        if (!valid) return false;
+    if (!valid) return false;
 
-        const nameRegex = /[0-9]|[!@#$%^&*()]/g;
-        const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const nameRegex = /[0-9]|[!@#$%^&*()]/g;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        if (vars[0]) {
-            if (nameRegex.test(vars[0])) {
-                $('#firstname').after('<p class="err">name should only contain alphabets</p>');
-                $('#firstname').addClass('errinpt');
-                valid = false;
-            }
-        } else {
-            $('#firstname').after('<p class="err">name should not be empty</p>');
+    if (vars[0]) {
+        if (nameRegex.test(vars[0])) {
+            $('#firstname').after('<p class="err">name should only contain alphabets</p>');
             $('#firstname').addClass('errinpt');
             valid = false;
         }
+    } else {
+        $('#firstname').after('<p class="err">name should not be empty</p>');
+        $('#firstname').addClass('errinpt');
+        valid = false;
+    }
 
-        if (vars[1]) {
-            if (nameRegex.test(vars[1])) {
-                $('#lastname').after('<p class="err">name should only contain alphabets</p>');
-                $('#lastname').addClass('errinpt');
-                valid = false;
-            }
-        } else {
-            $('#lastname').after('<p class="err">name should not be empty</p>');
+    if (vars[1]) {
+        if (nameRegex.test(vars[1])) {
+            $('#lastname').after('<p class="err">name should only contain alphabets</p>');
             $('#lastname').addClass('errinpt');
             valid = false;
         }
-
-        if (!emailRegex.test(vars[2])) {
-            $('#email').after('<p class="err">invalid email</p>');
-            $('#email').addClass('errinpt');
-            valid = false;
-        }
-
-        if (!vars[3]) {
-            $('#queriesDiv').after('<p class="err">select a query type</p>');
-            $('.query-type').addClass('errinpt');
-            valid = false;
-        }
-
-        if (!vars[4]) {
-            $('.message-div').after('<p class="err">a message is required</p>');
-            $('#message').addClass('errinpt');
-            valid = false;
-        }
-        return valid;
+    } else {
+        $('#lastname').after('<p class="err">name should not be empty</p>');
+        $('#lastname').addClass('errinpt');
+        valid = false;
     }
+
+    if (!emailRegex.test(vars[2])) {
+        $('#email').after('<p class="err">invalid email</p>');
+        $('#email').addClass('errinpt');
+        valid = false;
+    }
+
+    if (!vars[3]) {
+        $('#queriesDiv').after('<p class="err">select a query type</p>');
+        $('.query-type').addClass('errinpt');
+        valid = false;
+    }
+
+    if (!vars[4]) {
+        $('.message-div').after('<p class="err">a message is required</p>');
+        $('#message').addClass('errinpt');
+        valid = false;
+    }
+    return valid;
+}

@@ -197,6 +197,40 @@ body {
 #main #sub-main #form form .errinpt {
   border-color: hsl(0, 66%, 54%);
 }
+#main #sub-main #loaderDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#main #sub-main #loaderDiv .loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border-right-color: #25b09b;
+  animation: l15 1s infinite linear;
+}
+#main #sub-main #loaderDiv .loader::before,
+#main #sub-main #loaderDiv .loader::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: l15 2s infinite;
+}
+#main #sub-main #loaderDiv .loader::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+@keyframes l15 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
 
 #details {
   background-color: hsl(169, 82%, 27%);
