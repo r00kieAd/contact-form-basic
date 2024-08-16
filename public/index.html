@@ -24,33 +24,33 @@
           <div class="names">
             <div class="first-name">
               <label for="firstname">&nbsp;First Name <span class="required">*</span></label><br>
-              <input type="text" name="firstname" id="firstname" class="inpt" value="">
+              <input type="text" name="firstname" id="firstname" class="inpt inpx" value="" disabled>
             </div>
             <div class="last-name">
               <label for="lastname">&nbsp;Last Name <span class="required">*</span></label><br>
-              <input type="text" name="lastname" id="lastname" class="inpt" value="">
+              <input type="text" name="lastname" id="lastname" class="inpt inpx" value="" disabled>
             </div>
           </div>
           <div class="email-address">
             <label for="email">&nbsp;Email <span class="required">*</span></label><br>
-            <input type="text" name="email" id="email" class="inpt" value="">
+            <input type="text" name="email" id="email" class="inpt inpx" value="" disabled>
           </div>
           <div id="queriesDiv" class="queries">
             <label for="query">&nbsp;Query Type <span class="required">*</span></label>
             <div class="query-types">
               <div class="query-1 query-type inpt">
-                <input type="radio" name="query1" id="query1" class="qry" value="General Enquiry" checked>
+                <input type="radio" name="query1" id="query1" class="qry inpx" value="General Enquiry" checked disabled>
                 <label for="query1">General Enquiry</label>
               </div>
               <div class="query-2 query-type inpt">
-                <input type="radio" name="query2" id="query2" class="qry" value="Support Request" checked>
+                <input type="radio" name="query2" id="query2" class="qry inpx" value="Support Request" checked disabled>
                 <label for="query2">Support Request</label>
               </div>
             </div>
           </div>
           <div class="message-div">
             <label for="message">&nbsp;Message <span class="required">*</span></label><br>
-            <textarea name="message" id="message" class="inpt" value=""></textarea>
+            <textarea name="message" id="message" class="inpt inpx" value="" disabled></textarea>
           </div>
           <div class="consent">
             <div class="consent-container">
@@ -64,6 +64,9 @@
             <input type="submit" value="Submit">
           </div>
         </form>
+      </div>
+      <div id="loaderDiv">
+        <div class="loader"></div>
       </div>
     </div>
   </div>

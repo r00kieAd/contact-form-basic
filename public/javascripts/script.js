@@ -4,6 +4,7 @@ let valid = true;
 $(document).ready(() => {
     if (!submit) $('#iConsent').removeAttr('checked');
     $('.qry').removeAttr('checked');
+    $('.inpx').removeAttr('disabled');
 });
 
 $('.inpt').click(() => {
@@ -53,6 +54,7 @@ $('#formMain').submit((event) => {
     const form_data = getValues();
     valid = checkForm(form_data);
     if (valid) {
+        $('.inpx').prop('disabled', true);
         submitForm(form_data);
     } else {
         iDontConsent();
@@ -62,6 +64,7 @@ $('#formMain').submit((event) => {
 async function submitForm(form_data) {
     $('.submit-form').val('Please wait...');
     $('#loaderDiv').show();
+    submit = false;
     function hideLoader() {
         $('.submit-form').val('Submit');
         $('#loaderDiv').hide();
@@ -83,17 +86,26 @@ async function submitForm(form_data) {
         },
         error: function (xhr) {
             if (xhr.status != 200) {
+                let isItThere = false;
+                if ($('.serverResponse').text() == "") {
+                    isItThere = true;
+                }
                 try {
                     const response = JSON.parse(xhr.responseText);
-                    $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${response.error}</p>`);
+                    if (!isItThere) {
+                        $('.serverResponse').text(`Status ${xhr.status}: ${response.error}`);
+                    } else {
+                        $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
+                    }
                 } catch (err) {
-                    $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
+                    alert(`Status ${xhr.status}: ${response.error}\n\nTry Refreshing the page..`);
                 }
             } else {
-                alert(`unknown error: ${xhr.status}`);
+                alert(`unknown error: ${xhr.status}\n\nTry Refreshing the page..`);
             }
-            iDontConsent();
+            $('.inpx').prop('disabled', false);
             hideLoader();
+            iDontConsent();
         }
     });
 
