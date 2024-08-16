@@ -85,23 +85,22 @@ async function submitForm(form_data) {
             hideLoader();
         },
         error: function (xhr) {
-            if (xhr.status != 200) {
-                let isItThere = false;
-                if ($('.serverResponse').text() == "") {
-                    isItThere = true;
+            function displayError(xhr, resp) {
+                if ($('.serverResponse').text() != "") {
+                    $('.serverResponse').text(`Status ${xhr.status}: ${resp.error}`);
+                } else {
+                    $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${resp.error}</p>`);
                 }
+            }
+            if (xhr.status != 200) {
                 try {
                     const response = JSON.parse(xhr.responseText);
-                    if (!isItThere) {
-                        $('.serverResponse').text(`Status ${xhr.status}: ${response.error}`);
-                    } else {
-                        $('#formMain').after(`<p class='serverResponse'>Status ${xhr.status}: ${xhr.statusText}</p>`);
-                    }
+                    displayError(xhr, response);
                 } catch (err) {
-                    alert(`Status ${xhr.status}: ${response.error}\n\nTry Refreshing the page..`);
+                    alert(`Status ${xhr.status}, ${xhr.statusText}\n\nTry Refreshing the page..`);
                 }
             } else {
-                alert(`unknown error: ${xhr.status}\n\nTry Refreshing the page..`);
+                alert(`unknown error with code ${xhr.status}, ${xhr.statusText}\n\nTry Refreshing the page..`);
             }
             $('.inpx').prop('disabled', false);
             hideLoader();
